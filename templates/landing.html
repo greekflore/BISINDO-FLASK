@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classification Landing Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{{ url_for('landing_page') }}">Bisindo Image Classifier</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('landing_page') }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('upload_file') }}">Prediction</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <header class="jumbotron text-center">
+        <h1 class="display-4">Welcome to Bisindo Image Classification Project</h1>
+        <p class="lead">Upload an image and get instant predictions!</p>
+        <a href="{{ url_for('upload_file') }}" class="btn btn-primary btn-lg">Get Started</a>
+    </header>
+    <section id="about" class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>About This Project</h2>
+                <p>This project uses a deep learning model to classify bisindo images into different categories. The
+                    goal is to
+                    provide a simple and efficient way to recognize objects in images. Simply upload an image, and the
+                    model will predict the category it belongs to with a confidence score.</p>
+            </div>
+            <div class="col-md-6">
+                <img style="width: 640px; height: 320px;"
+                    src="https://blog.maukerja.my/data/blog/images/2018/08/sign%201-mk.JPG" alt="About Project Image"
+                    class="img-fluid rounded">
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
